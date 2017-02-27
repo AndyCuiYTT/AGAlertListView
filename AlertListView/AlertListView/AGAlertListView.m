@@ -29,7 +29,6 @@
         self.dataArray = options;
         self.frame = [UIScreen mainScreen].bounds;
         self.backgroundColor = [UIColor colorWithRed:0 green:0 blue:0 alpha:0.3];
-        
         UIView *bgView = [[UIView alloc] initWithFrame:CGRectMake(kScreenWidth * 0.1, kScreenHeight / 3, kScreenWidth * 0.8, kScreenHeight / 3)];
         bgView.backgroundColor = [UIColor grayColor];
         bgView.layer.masksToBounds = YES;
