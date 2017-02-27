@@ -41,12 +41,40 @@
 
 
 /**
- 初始化对想
+  类方法,弹出对象
+
+ @param options 列表数据
+ */
++ (void)showWithOptions:(NSArray<NSString*>*)options;
+
+
+/**
+ 类方法弹出对象
+
+ @param options 列表数据
+ @param index 选中下标
+ */
++ (void)showWithOptions:(NSArray<NSString *> *)options selected:(NSInteger)index;
+
+
+
+/**
+ 初始化对象
 
  @param options 列表数据
  @return 当前对象
  */
 - (instancetype)initWithOptions:(NSArray<NSString*>*)options;
+
+
+/**
+ 初始化对象
+
+ @param options 列表数据
+ @param index 选中的下标
+ @return 当前对象
+ */
+- (instancetype)initWithOptions:(NSArray<NSString *> *)options selected:(NSInteger)index;
 
 /**
  移除当前选择器

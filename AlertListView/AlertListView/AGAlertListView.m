@@ -23,6 +23,14 @@
 
 @implementation AGAlertListView
 
++ (void)showWithOptions:(NSArray<NSString *> *)options{
+    [[[UIApplication sharedApplication].delegate window] addSubview:[[AGAlertListView alloc] initWithOptions:options]];
+}
+
++ (void)showWithOptions:(NSArray<NSString *> *)options selected:(NSInteger)index{
+    [[[UIApplication sharedApplication].delegate window] addSubview:[[AGAlertListView alloc] initWithOptions:options selected:index]];
+}
+
 
 - (instancetype)initWithOptions:(NSArray<NSString *> *)options{
     if (self = [super init]) {
@@ -57,6 +65,13 @@
         UITapGestureRecognizer *removeTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(ag_dismiss)];
         [self addGestureRecognizer:removeTap];
         
+    }
+    return self;
+}
+
+- (instancetype)initWithOptions:(NSArray<NSString *> *)options selected:(NSInteger)index{
+    if (self = [self initWithOptions:options]) {
+        [self.dataPickerView selectRow:index inComponent:0 animated:YES];
     }
     return self;
 }
