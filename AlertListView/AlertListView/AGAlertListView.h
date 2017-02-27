@@ -44,8 +44,9 @@
   类方法,弹出对象
 
  @param options 列表数据
+ @param delegate 代理对象
  */
-+ (void)showWithOptions:(NSArray<NSString*>*)options;
++ (void)showWithOptions:(NSArray<NSString*>*)options delegate:(id<AGAlertListDelegate>)delegate;
 
 
 /**
@@ -53,8 +54,9 @@
 
  @param options 列表数据
  @param index 选中下标
+ @param delegate 代理对象
  */
-+ (void)showWithOptions:(NSArray<NSString *> *)options selected:(NSInteger)index;
++ (void)showWithOptions:(NSArray<NSString *> *)options selected:(NSInteger)index delegate:(id<AGAlertListDelegate>)delegate;
 
 
 

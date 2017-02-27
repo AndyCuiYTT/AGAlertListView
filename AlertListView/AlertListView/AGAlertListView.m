@@ -23,12 +23,16 @@
 
 @implementation AGAlertListView
 
-+ (void)showWithOptions:(NSArray<NSString *> *)options{
-    [[[UIApplication sharedApplication].delegate window] addSubview:[[AGAlertListView alloc] initWithOptions:options]];
++ (void)showWithOptions:(NSArray<NSString *> *)options delegate:(id<AGAlertListDelegate>)delegate{
+    AGAlertListView *listView = [[AGAlertListView alloc] initWithOptions:options];
+    listView.delegate = delegate;
+    [[[UIApplication sharedApplication].delegate window] addSubview:listView];
 }
 
-+ (void)showWithOptions:(NSArray<NSString *> *)options selected:(NSInteger)index{
-    [[[UIApplication sharedApplication].delegate window] addSubview:[[AGAlertListView alloc] initWithOptions:options selected:index]];
++ (void)showWithOptions:(NSArray<NSString *> *)options selected:(NSInteger)index delegate:(id<AGAlertListDelegate>)delegate{
+    AGAlertListView *listView = [[AGAlertListView alloc] initWithOptions:options selected:index];
+    listView.delegate = delegate;
+    [[[UIApplication sharedApplication].delegate window] addSubview:listView];
 }
 
 
