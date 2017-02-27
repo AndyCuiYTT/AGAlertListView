@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+@class AGAlertListView;
 
 
 /**
@@ -25,10 +26,11 @@
 /**
  点击确定按钮
 
+ @param listView 当前对象
  @param index 选中的选项编号
  @param option 选中的文字内容
  */
-- (void)ag_selectWithIndes:(NSInteger) index option:(NSString*)option;
+- (void)ag_selectWithListView:(AGAlertListView*)listView indes:(NSInteger) index option:(NSString*)option;
 
 @end
 

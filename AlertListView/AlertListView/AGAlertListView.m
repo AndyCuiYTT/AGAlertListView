@@ -28,7 +28,7 @@
     if (self = [super init]) {
         self.dataArray = options;
         self.frame = [UIScreen mainScreen].bounds;
-        self.backgroundColor = [UIColor colorWithDisplayP3Red:0 green:0 blue:0 alpha:0.3];
+        self.backgroundColor = [UIColor colorWithRed:0 green:0 blue:0 alpha:0.3];
         
         UIView *bgView = [[UIView alloc] initWithFrame:CGRectMake(kScreenWidth * 0.1, kScreenHeight / 3, kScreenWidth * 0.8, kScreenHeight / 3)];
         bgView.backgroundColor = [UIColor grayColor];
@@ -99,8 +99,9 @@
 
 - (void)ag_trueClickAction:(UIButton*)sender{
     NSInteger index = [_dataPickerView selectedRowInComponent:0];
-    if ([self.delegate respondsToSelector:@selector(ag_selectWithIndes:option:)]) {
-        [self.delegate ag_selectWithIndes:index option:self.dataArray[index]];
+    __weak typeof(self) wearkSelf = self;
+    if ([self.delegate respondsToSelector:@selector(ag_selectWithListView:indes:option:)]) {
+        [self.delegate ag_selectWithListView:wearkSelf indes:index option:wearkSelf.dataArray[index]];
     }
     [self ag_dismiss];
 }

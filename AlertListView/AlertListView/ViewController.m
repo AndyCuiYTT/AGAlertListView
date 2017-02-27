@@ -33,12 +33,17 @@
     NSLog(@"%ld ------- %@",index,option);
 }
 
-- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
-    AGAlertListView *v = [[AGAlertListView alloc] initWithOptions:@[@"s",@"d",@"d"]];
-    v.delegate = self;
-    [self.view addSubview:v];
 
+- (void)ag_selectWithListView:(AGAlertListView *)listView indes:(NSInteger)index option:(NSString *)option{
+    NSLog(@"%ld ------- %@",index,option);
 }
+
+//- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
+//    AGAlertListView *v = [[AGAlertListView alloc] initWithOptions:@[@"s",@"d",@"d"]];
+//    v.delegate = self;
+//    [self.view addSubview:v];
+//
+//}
 
 
 - (void)didReceiveMemoryWarning {
